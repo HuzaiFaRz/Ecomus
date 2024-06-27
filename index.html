@@ -3,9 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline color[#f7f7f7]">Hello world!</h1>
+    <main class="bg-slate-700 w-full h-full cursor-pointer select-none">
+      <header>
+        <div></div>
+        <nav class="w-full flex items-center justify-between px-7 h-24">
+          <img src="Logo/Logo.svg" alt="Logo" class="nav-log" id="NavLogo" />
+          <div class="nav-links-dropdpowns flex">
+            <div class="nav-link-dropdown relative overflow-hidden">
+              <div
+                class="nav-link-dropdown-btn text-base font-normal tracking-normal text-white flex"
+              >
+                Home<i class="ri-arrow-down-s-line text-lg font-light"></i>
+              </div>
+              <ul
+                class="nav-dropdown-menu flex flex-col justify-center items-center gap-8 absolute top-full left-1/2 -translate-y-full -translate-x-2/4 w-screen h-screen bg-black"
+              >
+                <div class="nav-dropdown-menu-part-1 flex w-full bg-black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Temporibus reiciendis consequuntur dicta dolor officia est,
+                  beatae sunt ducimus quasi atque eaque, blanditiis a accusamus
+                  asperiores rem ipsam quas similique maiores.
+                </div>
+                <div class="nav-dropdown-menu-part-1 flex flex w-full bg-black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Temporibus reiciendis consequuntur dicta dolor officia est,
+                  beatae sunt ducimus quasi atque eaque, blanditiis a accusamus
+                  asperiores rem ipsam quas similique maiores.
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-icons"></div>
+        </nav>
+      </header>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>
