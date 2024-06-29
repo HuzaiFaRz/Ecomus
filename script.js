@@ -1,28 +1,29 @@
-const header = document.querySelector(".header");
-const headerCloseBtn = document.querySelector(".top-header-close-btn");
+// const header = document.querySelector(".header");
+// const headerCloseBtn = document.querySelector(".top-header-close-btn");
 
-function headerTopSwipperSlider() {
-  var mySwiper = new Swiper(".top-header-swipper-container", {
-    direction: "horizontal",
-    loop: true,
-    effect: "slide",
+// function headerTopSwipperSlider() {
+//   var mySwiper = new Swiper(".top-header-swipper-container", {
+//     direction: "horizontal",
+//     loop: true,
+//     effect: "slide",
 
-    autoplay: {
-      delay: 3000,
-    },
+//     autoplay: {
+//       delay: 3000,
+//     },
 
-    navigation: {
-      nextEl: ".top-header-swipper-next",
-      prevEl: ".top-header-swipper-prev",
-    },
-  });
-  if (headerCloseBtn) {
-    headerCloseBtn.addEventListener("click", () => {
-      header.style.transform = "translateY(-100%)";
-    });
-  }
-}
-headerTopSwipperSlider();
+//     navigation: {
+//       nextEl: ".top-header-swipper-next",
+//       prevEl: ".top-header-swipper-prev",
+//     },
+//   });
+//   console.log(mySwiper);
+//   if (headerCloseBtn) {
+//     headerCloseBtn.addEventListener("click", () => {
+//       header.style.transform = "translateY(-100%)";
+//     });
+//   }
+// }
+// headerTopSwipperSlider();
 
 // <!-- <!DOCTYPE html>
 // <html>
