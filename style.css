@@ -42,11 +42,13 @@
   -webkit-user-modify: none !important;
   -webkit-user-drag: none;
   cursor: pointer;
+  transition: all 0.3s linear;
 }
 html,
 body {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -64,4 +66,70 @@ body {
 
 :root {
   --Top-Header-BackGround-Color: #c38361;
+  --Top-Header-Color: #ffffffff;
+}
+.header {
+  background-color: var(--Top-Header-BackGround-Color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+}
+
+.top-header-swipper-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.top-header-swipper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.top-header-swipper-slide {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: AlbertSansRegular;
+  font-size: 14px;
+  color: var(--Top-Header-Color);
+  letter-spacing: 1px;
+}
+
+.top-header-swipper-next,
+.top-header-swipper-prev {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  font-size: 18px;
+  color: var(--Top-Header-Color);
+}
+.top-header-swipper-next {
+  right: 5%;
+  top: 50%;
+  transform: translate(5%, -50%);
+}
+.top-header-swipper-prev {
+  left: 5%;
+  top: 50%;
+  transform: translate(-5%, -50%);
+}
+.top-header-close-btn {
+  font-size: 18px;
+  color: var(--Top-Header-Color);
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translate(2%, -50%);
+  z-index: 1;
 }
