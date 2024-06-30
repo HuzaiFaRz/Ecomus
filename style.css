@@ -153,9 +153,6 @@ a {
   background: red;
 }
 .nav-dropdown {
-  position: relative;
-  overflow: hidden;
-  display: inline-flex;
   z-index: 1111;
 }
 
@@ -176,9 +173,8 @@ a {
   transition: all 0.3s linear;
   position: absolute;
   left: 50%;
-  top: 16%;
+  top: -130%;
   transform: translateX(-50%);
-  opacity: 0;
   z-index: 100;
   width: 95%;
   height: max-content;
@@ -194,7 +190,7 @@ a {
 
 .nav-dropdown:hover .nav-dropdown-menu {
   transition: all 0.3s linear;
-  opacity: 1;
+  top: 16%;
 }
 
 .nav-dropdown-menu-part-1 {
