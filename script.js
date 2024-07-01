@@ -1,8 +1,8 @@
 (() => {
   const header = document.querySelector(".header");
   const headerCloseBtn = document.querySelector(".top-header-close-btn");
-  const navDropdown = document.querySelector(".nav-dropdown");
-  const navDropdownMenu = document.querySelector(".nav-dropdown-menu");
+  const navDropdown = document.querySelectorAll(".nav-dropdown");
+  const navDropdownMenu = document.querySelectorAll(".nav-dropdown-menu");
   const navDropdownMenuPart1 = document.querySelector(
     ".nav-dropdown-menu-part-1"
   );
@@ -31,7 +31,7 @@
       headerCloseBtn.addEventListener("click", () => {
         gsap.to(header, {
           duration: 0.5,
-          transition: Power3,
+          ease: Power3.easeInOut,
           y: "-100%",
         });
         setTimeout(() => {
@@ -45,22 +45,25 @@
   headerAnimation();
 
   const navDropdownS = () => {
-    navDropdown.addEventListener("mouseenter", (e) => {
-      gsap.to(navDropdownMenu, {
-        scaleY: 1,
-        opacity: 1,
-        duration: 0.5,
-        transition: Power1,
+    navDropdown.forEach((elem, index) => {
+      elem.addEventListener("mouseenter", () => {
+        gsap.to(navDropdownMenu[index], {
+          scaleY: 1,
+          opacity: 1,
+          duration: 0.5,
+          ease: Power1.easeInOut,
+        });
+      });
+      elem.addEventListener("mouseleave", () => {
+        gsap.to(navDropdownMenu[index], {
+          scaleY: 0,
+          opacity: 0,
+          duration: 0.5,
+          ease: Power1.easeInOut,
+        });
       });
     });
-    navDropdown.addEventListener("mouseleave", (e) => {
-      gsap.to(navDropdownMenu, {
-        scaleY: 0,
-        opacity: 0,
-        duration: 0.5,
-        transition: Power1,
-      });
-    });
+
     for (let a = 1; a <= 12; a++) {
       navDropdownMenuPart1.innerHTML += `<a href="#" class="nav-dropdown-menu-content">
                 <div class="nav-dropdown-menu-btns">
@@ -82,16 +85,16 @@
           gsap.from(b, {
             scale: 1.1,
             opacity: 0,
-            duration: 0.6,
-            transition: Power2,
+            duration: 0.3,
+            ease: Power1.easeInOut,
           });
         });
         b.addEventListener("mouseleave", () => {
           gsap.to(b, {
             scale: 1,
             opacity: 1,
-            duration: 0.6,
-            transition: Power2,
+            duration: 0.5,
+            ease: Power1.easeInOut,
           });
         });
       });
