@@ -1,108 +1,101 @@
-// const header = document.querySelector(".header");
-// const headerCloseBtn = document.querySelector(".top-header-close-btn");
+(() => {
+  const header = document.querySelector(".header");
+  const headerCloseBtn = document.querySelector(".top-header-close-btn");
+  const navDropdown = document.querySelector(".nav-dropdown");
+  const navDropdownMenu = document.querySelector(".nav-dropdown-menu");
+  const navDropdownMenuPart1 = document.querySelector(
+    ".nav-dropdown-menu-part-1"
+  );
 
-// function headerTopSwipperSlider() {
-//   var mySwiper = new Swiper(".top-header-swipper-container", {
-//     direction: "horizontal",
-//     loop: true,
-//     effect: "slide",
+  const headerTopSwipperSlider = () => {
+    var mySwiper = new Swiper(".top-header-swipper-container", {
+      direction: "horizontal",
+      loop: true,
+      effect: "slide",
 
-//     autoplay: {
-//       delay: 3000,
-//     },
+      autoplay: {
+        delay: 3000,
+      },
 
-//     navigation: {
-//       nextEl: ".top-header-swipper-next",
-//       prevEl: ".top-header-swipper-prev",
-//     },
-//   });
-//   console.log(mySwiper);
-//   if (headerCloseBtn) {
-//     headerCloseBtn.addEventListener("click", () => {
-//       header.style.transform = "translateY(-100%)";
-//     });
-//   }
-// }
-// headerTopSwipperSlider();
+      navigation: {
+        nextEl: ".top-header-swipper-next",
+        prevEl: ".top-header-swipper-prev",
+      },
+    });
+  };
 
-// <!-- <!DOCTYPE html>
-// <html>
-//   <head>
-//     <meta charset="UTF-8" />
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-// <link
-//   href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-//   rel="stylesheet"
-// />
+  headerTopSwipperSlider();
 
-// <link
-//   rel="stylesheet"
-//   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-// />
-//     <link rel="stylesheet" href="index.css" />
-//   </head>
-//   <body>
-//     <main class="bg-slate-700 w-full h-full cursor-pointer select-none overflo">
-//       <header
-//         class="bg-[#c38361] w-full h-10 flex flex-row justify-center items-center"
-//       >
-// <div
-//   class="swiper-container h-full flex flex-row justify-center items-center"
-// >
-//   <div
-//     class="swiper-wrapper h-full flex flex-row justify-center items-center"
-//   >
-//     <div
-//       class="swiper-slide w-6/12 h-full flex flex-col justify-center items-center text-center text-white font-light tracking-wider text-md font-['Albert_Sans\AlbertSans-Black.ttf']"
-//     >
-//       Fashion Frenzy: Up to 60% off on all styles
-//     </div>
-//     <div
-//       class="swiper-slide w-6/12 h-full flex flex-col justify-center items-center text-center text-white font-bold"
-//     >
-//       Welcome to our store
-//     </div>
-//   </div>
+  const headerAnimation = () => {
+    if (headerCloseBtn) {
+      headerCloseBtn.addEventListener("click", () => {
+        gsap.to(header, {
+          duration: 0.5,
+          transition: Power3,
+          y: "-100%",
+        });
+        setTimeout(() => {
+          gsap.to(header, {
+            display: "none",
+          });
+        }, 200);
+      });
+    }
+  };
+  headerAnimation();
 
-//   <div class="swiper-pagination"></div>
-
-//   <i class="next ri-arrow-right-s-line"></i>
-//   <i class="prev ri-arrow-left-s-line"></i>
-// </div>
-//          <i class="ri-close-line self-end"></i>
-//       </header>
-//       <nav class="w-full flex items-center justify-between px-7 h-24">
-//         <img src="Logo/Logo.svg" alt="Logo" class="nav-log" id="NavLogo" />
-//         <div class="nav-links-dropdpowns flex">
-//           <div class="nav-link-dropdown relative overflow-hidden">
-//             <div
-//               class="nav-link-dropdown-btn text-base font-normal tracking-normal text-white flex"
-//             >
-//               Home<i class="ri-arrow-down-s-line text-lg font-light"></i>
-//             </div>
-//             <ul
-//               class="nav-dropdown-menu flex flex-col justify-center items-center gap-8 absolute top-full left-1/2 -translate-y-full -translate-x-2/4 w-screen h-screen bg-black"
-//             >
-//               <div class="nav-dropdown-menu-part-1 flex w-full bg-black">
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Temporibus reiciendis consequuntur dicta dolor officia est,
-//                 beatae sunt ducimus quasi atque eaque, blanditiis a accusamus
-//                 asperiores rem ipsam quas similique maiores.
-//               </div>
-//               <div class="nav-dropdown-menu-part-1 flex flex w-full bg-black">
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Temporibus reiciendis consequuntur dicta dolor officia est,
-//                 beatae sunt ducimus quasi atque eaque, blanditiis a accusamus
-//                 asperiores rem ipsam quas similique maiores.
-//               </div>
-//             </ul>
-//           </div>
-//         </div>
-//         <div class="nav-icons"></div>
-//       </nav>
-//     </main>
-//     <script src="https://cdn.tailwindcss.com"></script>
-//     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-//     <script src="app.js"></script>
-//   </body>
-// </html> -->
+  const navDropdownS = () => {
+    navDropdown.addEventListener("mouseenter", (e) => {
+      gsap.to(navDropdownMenu, {
+        scaleY: 1,
+        opacity: 1,
+        duration: 0.5,
+        transition: Power1,
+      });
+    });
+    navDropdown.addEventListener("mouseleave", (e) => {
+      gsap.to(navDropdownMenu, {
+        scaleY: 0,
+        opacity: 0,
+        duration: 0.5,
+        transition: Power1,
+      });
+    });
+    for (let a = 1; a <= 12; a++) {
+      navDropdownMenuPart1.innerHTML += `<a href="#" class="nav-dropdown-menu-content">
+                <div class="nav-dropdown-menu-btns">
+                  <button class="nav-dropdown-menu-btn">New</button>
+                  <button class="nav-dropdown-menu-btn">Trend</button>
+                </div>
+                <img src="Dropdown-Menu-image/${[
+                  a,
+                ]}.jpg" class="nav-dropdown-menu-img"/>
+                <div class="nav-dropdown-menu-img-text">Home Fashion ${[
+                  a,
+                ]}</div>
+              </a>`;
+      const navDropdownMenuContent = document.querySelectorAll(
+        ".nav-dropdown-menu-content"
+      );
+      navDropdownMenuContent.forEach((b) => {
+        b.addEventListener("mouseenter", () => {
+          gsap.from(b, {
+            scale: 1.1,
+            opacity: 0,
+            duration: 0.6,
+            transition: Power2,
+          });
+        });
+        b.addEventListener("mouseleave", () => {
+          gsap.to(b, {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            transition: Power2,
+          });
+        });
+      });
+    }
+  };
+  navDropdownS();
+})();
