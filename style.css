@@ -7,7 +7,6 @@
   -webkit-user-select: none;
   -webkit-user-modify: none !important;
   -webkit-user-drag: none;
-  cursor: pointer;
 }
 
 @font-face {
@@ -36,6 +35,14 @@
   --Color9: #fcc6de;
 }
 
+a,
+button,
+span,
+i,
+p {
+  cursor: pointer;
+}
+
 main {
   overflow: hidden !important;
   background: #253d4e;
@@ -43,25 +50,10 @@ main {
   background: #61b482;
 }
 
-.header {
-  transform: translateY(0%);
-}
 
-.country-select-menu {
-  width: max-content;
-  visibility: hidden;
-  opacity: 0;
-}
 
-.country-select-menu:before {
-  content: "";
-  position: absolute;
-  top: -100%;
-  right: 15%;
-  background: red;
-  width: 25px;
-  height: 25px;
-}
+
+
 s:checked .header {
   display: none !important;
 }

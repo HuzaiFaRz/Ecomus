@@ -2,8 +2,11 @@
   const header = document.querySelector(".header");
   const headerCloseBtn = document.querySelector(".top-header-close-btn");
 
-  const countrySelect = document.querySelectorAll(".country-select");
+  const countrySelectBtn = document.querySelectorAll(".country-select-btn");
   const countrySelectMenu = document.querySelectorAll(".country-select-menu");
+  const countrySelectMenuBtnIcon = document.querySelectorAll(
+    ".country-select-btn-icon"
+  );
 
   const navDropdown = document.querySelectorAll(".nav-dropdown");
   const navDropdownMenu = document.querySelectorAll(".nav-dropdown-menu");
@@ -12,33 +15,52 @@
   );
 
   const headerFunctionality = () => {
-    countrySelect.forEach((countrySelectElem, countrySelectIndex) => {
-      countrySelectElem.addEventListener("click", () => {
-        countrySelectMenu[countrySelectIndex].classList.toggle(
-          "country-Select-Menu-Active"
-        );
-
-        if (
-          countrySelectMenu[countrySelectIndex].classList.contains(
+    Array.from(countrySelectBtn).forEach(
+      (countrySelectBtnElem, countrySelectBtnIndex) => {
+        countrySelectBtnElem.addEventListener("click", () => {
+          // let open = true;
+          countrySelectMenu[countrySelectBtnIndex].classList.toggle(
             "country-Select-Menu-Active"
-          )
-        ) {
-          gsap.to(countrySelectMenu[countrySelectIndex], {
-            visibility: "visible",
-            opacity: 1,
-            ease: Power1.easeInOut,
-            duration: 0.3,
-          });
-        } else {
-          gsap.to(countrySelectMenu[countrySelectIndex], {
-            visibility: "hidden",
-            opacity: 0,
-            ease: Power1.easeInOut,
-            duration: 0.3,
-          });
-        }
-      });
-    });
+          );
+
+          if (
+            countrySelectMenu[countrySelectBtnIndex].classList.contains(
+              "country-Select-Menu-Active"
+            )
+          ) {
+            gsap.to(countrySelectMenu[countrySelectBtnIndex], {
+              opacity: 1,
+              ease: Power1.easeInOut,
+              duration: 0.3,
+            });
+
+            if ((countrySelectMenu[countrySelectBtnIndex].opa)) {
+              console.log("ds");
+            }
+          } else {
+            gsap.to(countrySelectMenu[countrySelectBtnIndex], {
+              opacity: 0,
+              ease: Power1.easeInOut,
+              duration: 0.3,
+            });
+          }
+
+          // if (
+          //   countrySelectMenu[1].classList.contains(
+          //     "country-Select-Menu-Active"
+          //   )
+          // ) {
+          //   console.log("this");
+          //   gsap.to(countrySelectMenu[1], {
+          //     visibility: "visible",
+          //     opacity: 1,
+          //     ease: Power1.easeInOut,
+          //     duration: 0.3,
+          //   });
+          // }
+        });
+      }
+    );
   };
   headerFunctionality();
 
