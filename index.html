@@ -18,8 +18,12 @@
   </head>
   <body class="w-full h-full overflow-x-hidden font-['AlbertSansRegular']">
     <main class="overflow-hidden">
-      <header class="header">
-        <nav class="nav">
+      <header
+        class="header flex flex-col justify-center items-center w-full h-55 bg-black"
+      >
+        <nav
+          class="navbar flex flex-col justify-center items-center w-full h-full bg-black"
+        >
           <div
             class="top-bar w-full bg-[#f5f5f5] flex flex-row justify-between items-center h-11 translate-y-0 px-5"
           >
@@ -52,7 +56,7 @@
             </div>
 
             <div
-              class="header-center-content flex flex-row items-center justify-center text-center gap-1 text-sm text-[#253d4e] font-semibold tracking-wide"
+              class="top-bar-center-content flex flex-row items-center justify-center text-center gap-1 text-sm text-[#253d4e] font-semibold tracking-wide"
             >
               Spring Sale: Sweet Crunchy Salad.
               <span class="text-[#61b482] underline"
@@ -61,7 +65,7 @@
             </div>
 
             <div
-              class="header-right-content flex flex-row items-center justify-center gap-3"
+              class="top-bar-right-content flex flex-row items-center justify-center gap-3"
             >
               <span class="text-sm text-[#253d4e] font-medium tracking-wide">
                 Need help? <span class="font-semibold"> Call Us:</span>
@@ -79,7 +83,7 @@
                   ></i>
                 </div>
                 <div
-                  class="country-select-menu flex flex-col justify-center items-start gap-1 bg-[#fff] absolute top-full left-1/3 -translate-x-2/4 p-4 opacity-0 w-max"
+                  class="country-select-menu flex flex-col justify-center items-start gap-1 bg-[#fff] absolute top-full left-1/3 -translate-x-2/4 p-4 opacity-0 invisible w-max"
                 >
                   <span
                     class="flex flex-row items-center justify-center gap-2 p-1 text-sm"
@@ -117,7 +121,7 @@
                   ></i>
                 </div>
                 <div
-                  class="country-select-menu flex flex-col justify-center items-start gap-1 bg-[#fff] absolute top-full right-auto translate-x-auto p-4 opacity-0 w-max"
+                  class="country-select-menu flex flex-col justify-center items-start gap-1 bg-[#fff] absolute top-full right-auto translate-x-auto p-4 opacity-0 invisible w-max"
                 >
                   <span
                     class="flex flex-row items-center justify-center gap-2 p-1 text-sm text-[#61b482]"
@@ -141,281 +145,405 @@
                   >
                 </div>
               </div>
-              <i class="ri-close-line text-xl top-header-close-btn"></i>
+              <i class="ri-close-line text-xl top-bar-close-btn"></i>
             </div>
           </div>
 
           <div
-            class="center-bar w-full bg-[#f5f5f5] flex flex-row justify-between items-center h-11 px-5"
+            class="center-bar w-full bg-[#fff] border-b border-gray-700 flex flex-row justify-between items-center h-24 px-5"
           >
             <div
-              class="header-left-content flex flex-row items-center justify-center"
+              class="center-bar-left-content flex flex-row items-center justify-center"
             >
-              <img src="Logo/Logo.svg" />
+              <a href="index.html"><img src="Logo/Logo.svg" /></a>
+            </div>
+
+            <div class="center-bar-center-content">
+              <form
+                class="center-search-form relative w-96 py-1 px-2 border border-grey-500 rounded-3xl flex flex-row justify-between items-center"
+              >
+                <input
+                  type="search"
+                  class="center-search-input w-full focus:outline-0 px-1 py-1 text-[#253d4e]"
+                  placeholder="Search Product"
+                />
+
+                <i
+                  class="ri-close-line cursor-pointer text-[#253d4e] border border-grey-500 px-1 py-1 opacity-70 hover:opacity-100 hover:border-zinc-500 flex flex-col justify-center items-center mr-4 center-search-input-cancel invisible"
+                  style="border-radius: 50%; width: 25px; height: 25px"
+                ></i>
+
+                <button
+                  class="bg-[#253d4e] text-[#fff] py-2 px-8 rounded-3xl hover:bg-[#48d4bb]"
+                >
+                  <i class="ri-search-line text-xl"></i>
+                </button>
+
+                <ul
+                  class="center-search-menu flex- flex-col justify-between items-start w-full px-2 py-2 absolute top-full left-auto -translate-x-auto bg-[#fff] shadow-xl rounded-xl invisible opacity-0"
+                >
+                  <li
+                    class="flex flex-row justify-start items-start gap-2 py-3 px-4 border-b border-grey-500 w-full"
+                  >
+                    <img
+                      src="Search-Img/298699011_0_640x640_44e211d3-c600-407a-aa96-c60c0c7f6d7a.webp"
+                      class="w-16"
+                    />
+                    <div class="flex flex-col justify-center items-start gap-1">
+                      <span
+                        class="text-[#000000] hover:text-[#48d4bb] font-medium tracking-wide text-sm cursor-pointer"
+                        >Berry World Blueberries</span
+                      >
+                      <span
+                        class="text-[#000000] font-semibold tracking-wide text-sm"
+                        >€3,95</span
+                      >
+                    </div>
+                  </li>
+
+                  <li
+                    class="flex flex-row justify-start items-start gap-2 py-3 px-4 border-b border-grey-500 w-full"
+                  >
+                    <img
+                      src="Search-Img/515808011_0_640x640_2e562330-0650-45a3-8165-2e164d1a7789.webp"
+                      class="w-16"
+                    />
+                    <div class="flex flex-col justify-center items-start gap-1">
+                      <span
+                        class="text-[#000000] hover:text-[#48d4bb] font-medium tracking-wide text-sm cursor-pointer"
+                        >M&S Full-Bodied Greek Kalamata Olives</span
+                      >
+                      <span
+                        class="text-[#000000] font-semibold tracking-wide text-sm"
+                        >€6,95</span
+                      >
+                    </div>
+                  </li>
+
+                  <li
+                    class="flex flex-row justify-start items-start gap-2 py-3 px-4 border-b border-grey-500 w-full"
+                  >
+                    <img
+                      src="Search-Img/519701011_0_640x640_7b764507-79d4-4823-871e-68474c4e5936.webp"
+                      class="w-16"
+                    />
+                    <div class="flex flex-col justify-center items-start gap-1">
+                      <span
+                        class="text-[#000000] hover:text-[#48d4bb] font-medium tracking-wide text-sm cursor-pointer"
+                        >Fish Said Fred Sea Bass Fillets</span
+                      >
+                      <span
+                        class="text-[#000000] font-semibold tracking-wide text-sm"
+                        >€5,95</span
+                      >
+                    </div>
+                  </li>
+
+                  <li
+                    class="flex flex-row justify-start items-start gap-2 py-3 px-4 border-b border-grey-500 w-full"
+                  >
+                    <img src="Search-Img/pr21.webp" class="w-16" />
+                    <div class="flex flex-col justify-center items-start gap-1">
+                      <span
+                        class="text-[#000000] hover:text-[#48d4bb] font-medium tracking-wide text-sm cursor-pointer"
+                        >Berry World Strawberries</span
+                      >
+                      <span
+                        class="text-[#000000] font-semibold tracking-wide text-sm"
+                        >€28,95</span
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </form>
+            </div>
+
+            <div
+              class="center-bar-right-content flex flex-row justify-center items-center gap-5"
+            >
+              <span
+                class="login-btn flex flex-row justify-center items-center tracking-wider text-[#253d4e] hover:text-[#83b735]"
+                ><i class="ri-user-fill text-2xl"></i>Login</span
+              >
+              <span
+                class="login-btn flex flex-row justify-center items-center tracking-wider text-[#253d4e] hover:text-[#83b735]"
+                ><i class="ri-collapse-horizontal-line text-2xl"></i
+                >Compare</span
+              >
+
+              <span
+                class="login-btn flex flex-row justify-center items-center tracking-wider text-[#253d4e] hover:text-[#83b735]"
+                ><i class="ri-heart-fill text-2xl"></i>Wishlist</span
+              >
+              <span
+                class="ri-shopping-cart-fill cart-btn text-4xl border-l border-grey-100 px-2"
+              ></span>
+            </div>
+          </div>
+
+          <div
+            class="bottom-bar w-full bg-[#f5f5f5] flex flex-row justify-between items-center h-20 px-5"
+          >
+            <div class="nav-dropdowns">
+              <div class="nav-dropdown">
+                <div class="nav-dropdown-btn">
+                  Home <i class="ri-arrow-down-s-line"></i>
+                </div>
+                <div class="nav-dropdown-menu">
+                  <div class="nav-dropdown-menu-part-1"></div>
+                  <a href="#" class="nav-dropdown-menu-main-btn">
+                    View All Demos 32+ <i class="ri-arrow-right-s-line"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="nav-dropdown">
+                <div class="nav-dropdown-btn">
+                  Shop <i class="ri-arrow-down-s-line"></i>
+                </div>
+                <div class="nav-dropdown-menu">
+                  <ul class="nav-dropdown-menu-links">
+                    <h5>SHOP LAYOUTS</h5>
+                    <li><a href="#">Default</a></li>
+                    <li><a href="#">Left Sidebar</a></li>
+                    <li><a href="#">Right Sidebar</a></li>
+                    <li><a href="#">FullWidth</a></li>
+                    <li><a href="#">Sub Collection</a></li>
+                    <li><a href="#">Collection List</a></li>
+                  </ul>
+                  <ul class="nav-dropdown-menu-links">
+                    <h5>FEATURES</h5>
+                    <li><a href="#">Pagination Links</a></li>
+                    <li><a href="#">Pagination Laodmore</a></li>
+                    <li><a href="#">Pagination Infinite Scroll</a></li>
+                    <li><a href="#">Filter Sidebar</a></li>
+                    <li><a href="#">Filter Hidden</a></li>
+                  </ul>
+                  <ul class="nav-dropdown-menu-links">
+                    <h5>PRODUCT STYLES</h5>
+                    <li><a href="#">Product Style 01</a></li>
+                    <li><a href="#">Product Style 02</a></li>
+                    <li><a href="#">Product Style 03</a></li>
+                    <li><a href="#">Product Style 04</a></li>
+                    <li><a href="#">Product Style 05</a></li>
+                    <li><a href="#">Product Style 06</a></li>
+                    <li><a href="#">Product Style 07</a></li>
+                  </ul>
+                  <div class="nav-dropdown-menu-2-img">
+                    <img src="Dropdown-Menu-image/14.jpg" />
+                    <a href="#" class="dropdown-menu-men-btn">Men</a>
+                  </div>
+                  <div class="nav-dropdown-menu-2-img">
+                    <img src="Dropdown-Menu-image/13.webp" />
+                    <a href="#" class="dropdown-menu-women-btn">Women</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nav-dropdown">
+                <div class="nav-dropdown-btn">
+                  Products <i class="ri-arrow-down-s-line"></i>
+                </div>
+                <div class="nav-dropdown-menu">
+                  <ul class="nav-dropdown-menu-links">
+                    <h5>PRODUCT LAYOUTS</h5>
+                    <li><a href="#"> Product grid 1</a></li>
+                    <li><a href="#"> Product grid 2</a></li>
+                    <li><a href="#">Product stacked</a></li>
+                    <li><a href="#">Product right thumbnails</a></li>
+                    <li><a href="#">Product bottom thumbnails</a></li>
+                    <li><a href="#">Product drawer sidebar</a></li>
+                    <li><a href="#">Product description accordion</a></li>
+                    <li><a href="#">Product description list</a></li>
+                    <li><a href="#">Product description vertical</a></li>
+                  </ul>
+                  <ul class="nav-dropdown-menu-links">
+                    <h5>PRODUCT DETAILS</h5>
+
+                    <li><a href="#">Product inner zoom</a></li>
+
+                    <li><a href="#">Product zoom magnifier</a></li>
+
+                    <li><a href="#">Product no zoom</a></li>
+
+                    <li><a href="#">Product photoswipe popup</a></li>
+
+                    <li>
+                      <a href="#">Product external zoom and photoswipe popup</a>
+                    </li>
+
+                    <li><a href="#">Product video</a></li>
+
+                    <li><a href="#">Product 3D, AR models</a></li>
+                    <li><a href="#"> Product options & customizer</a></li>
+                    <li><a href="#">Advanced product types</a></li>
+
+                    <li>
+                      <a href="#">Recipient information form for gift card </a>
+                    </li>
+
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                  <ul class="nav-dropdown-menu-links">
+                    <h5>PRODUCT SWATCHS</h5>
+                    <li><a href="#">Product color swatch</a></li>
+                    <li><a href="#">Product rectangle</a></li>
+                    <li><a href="#">Product rectangle color</a></li>
+                    <li><a href="#">Product swatch image</a></li>
+                    <li><a href="#">Product swatch image rounded</a></li>
+                    <li><a href="#">Product swatch dropdown</a></li>
+                    <li><a href="#">Product swatch dropdown color</a></li>
+                  </ul>
+                  <ul class="nav-dropdown-menu-links">
+                    <h5>PRODUCT FEATURES</h5>
+                    <li><a href="#">Frequently bought together</a></li>
+                    <li><a href="#">Frequently bought together 2</a></li>
+                    <li><a href="#">Frequently Bought Together</a></li>
+                    <li><a href="#">by EcomRise</a></li>
+                    <li><a href="#">Product upsell features</a></li>
+                    <li><a href="#">Product pre-orders</a></li>
+                    <li><a href="#">Back in stock notification</a></li>
+                    <li><a href="#">Product pickup</a></li>
+                    <li><a href="#">Variant images grouped</a></li>
+                    <li><a href="#">Complimentary products</a></li>
+                    <li><a href="#">Integration Ryviu app</a></li>
+                    <li><a href="#">Quick order list</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Sale Notification</a></li>
+                    <li><a href="#">by EcomRise</a></li>
+                    <li><a href="#">Volume Discount</a></li>
+                  </ul>
+
+                  <div class="swiper-container dropdown-menu-swipper-container">
+                    <div class="swiper-wrapper dropdown-menu-swipper-wrapper">
+                      <div class="swiper-slide dropdown-menu-swipper-slide">
+                        <div class="dropdown-menu-card">
+                          <div class="dropdown-menu-card-content">
+                            <img
+                              src="Dropdown-Menu-image/Drodpown-Swipper-img-2.jpg"
+                              class="dropdown-menu-card-img"
+                            />
+                            <div class="dropdown-menu-card-overlay">
+                              <div class="dropdown-menu-card-icons">
+                                <i
+                                  class="ri-mail-add-fill dropdown-menu-card-icon"
+                                  title="Quick Add"
+                                ></i>
+                                <i
+                                  class="ri-compass-discover-fill dropdown-menu-card-icon"
+                                  title="Add To WishList"
+                                ></i>
+                                <i
+                                  class="ri-heart-3-fill dropdown-menu-card-icon"
+                                  title="Add To Compare"
+                                ></i>
+                                <i
+                                  class="ri-eye-fill dropdown-menu-card-icon"
+                                  title="Quick View"
+                                ></i>
+                              </div>
+                              <div class="dropdown-menu-card-size-product">
+                                S &nbsp; M &nbsp; L &nbsp; &nbsp; X &nbsp; L
+                              </div>
+                            </div>
+                          </div>
+
+                          <span class="dropdown-menu-card-product-title"
+                            >Oversized Printed T-shirt</span
+                          >
+                          <span class="dropdown-menu-card-product-prize"
+                            >$18.00</span
+                          >
+
+                          <div class="dropdown-menu-card-product-colors">
+                            <span
+                              class="dropdown-menu-card-product-color-white"
+                            ></span>
+                            <span
+                              class="dropdown-menu-card-product-color-pink"
+                            ></span>
+                            <span
+                              class="dropdown-menu-card-product-color-black"
+                            ></span>
+                          </div>
+                        </div>
+
+                        <div class="dropdown-menu-card">
+                          <div class="dropdown-menu-card-content">
+                            <img
+                              src="Dropdown-Menu-image/Drodpown-Swipper-img-2.jpg"
+                              class="dropdown-menu-card-img"
+                            />
+                            <div class="dropdown-menu-card-overlay">
+                              <div class="dropdown-menu-card-icons">
+                                <i
+                                  class="ri-mail-add-fill dropdown-menu-card-icon"
+                                  title="Quick Add"
+                                ></i>
+                                <i
+                                  class="ri-compass-discover-fill dropdown-menu-card-icon"
+                                  title="Add To WishList"
+                                ></i>
+                                <i
+                                  class="ri-heart-3-fill dropdown-menu-card-icon"
+                                  title="Add To Compare"
+                                ></i>
+                                <i
+                                  class="ri-eye-fill dropdown-menu-card-icon"
+                                  title="Quick View"
+                                ></i>
+                              </div>
+                              <div class="dropdown-menu-card-size-product">
+                                S &nbsp; M &nbsp; L &nbsp; &nbsp; X &nbsp; L
+                              </div>
+                            </div>
+                          </div>
+
+                          <span class="dropdown-menu-card-product-title"
+                            >Oversized Printed T-shirt</span
+                          >
+                          <span class="dropdown-menu-card-product-prize"
+                            >$18.00</span
+                          >
+
+                          <div class="dropdown-menu-card-product-colors">
+                            <span
+                              class="dropdown-menu-card-product-color-white"
+                            ></span>
+                            <span
+                              class="dropdown-menu-card-product-color-pink"
+                            ></span>
+                            <span
+                              class="dropdown-menu-card-product-color-black"
+                            ></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide dropdown-menu-swipper-slide">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quisquam incidunt error totam culpa saepe magni ab
+                        porro, laboriosam laudantium architecto dignissimos
+                        tempora dolorem reprehenderit molestias minus voluptas
+                        adipisci possimus delectus!
+                      </div>
+                    </div>
+                    <div
+                      class="ri-arrow-right-s-line dropdown-menu-swipper-next"
+                    ></div>
+                    <div
+                      class="ri-arrow-left-s-line dropdown-menu-swipper-prev"
+                    ></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </nav>
       </header>
-
-      <div class="bottom-bar">
-        <div class="nav-dropdowns">
-          <div class="nav-dropdown">
-            <div class="nav-dropdown-btn">
-              Home <i class="ri-arrow-down-s-line"></i>
-            </div>
-            <div class="nav-dropdown-menu">
-              <div class="nav-dropdown-menu-part-1"></div>
-              <a href="#" class="nav-dropdown-menu-main-btn">
-                View All Demos 32+ <i class="ri-arrow-right-s-line"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="nav-dropdown">
-            <div class="nav-dropdown-btn">
-              Shop <i class="ri-arrow-down-s-line"></i>
-            </div>
-            <div class="nav-dropdown-menu">
-              <ul class="nav-dropdown-menu-links">
-                <h5>SHOP LAYOUTS</h5>
-                <li><a href="#">Default</a></li>
-                <li><a href="#">Left Sidebar</a></li>
-                <li><a href="#">Right Sidebar</a></li>
-                <li><a href="#">FullWidth</a></li>
-                <li><a href="#">Sub Collection</a></li>
-                <li><a href="#">Collection List</a></li>
-              </ul>
-              <ul class="nav-dropdown-menu-links">
-                <h5>FEATURES</h5>
-                <li><a href="#">Pagination Links</a></li>
-                <li><a href="#">Pagination Laodmore</a></li>
-                <li><a href="#">Pagination Infinite Scroll</a></li>
-                <li><a href="#">Filter Sidebar</a></li>
-                <li><a href="#">Filter Hidden</a></li>
-              </ul>
-              <ul class="nav-dropdown-menu-links">
-                <h5>PRODUCT STYLES</h5>
-                <li><a href="#">Product Style 01</a></li>
-                <li><a href="#">Product Style 02</a></li>
-                <li><a href="#">Product Style 03</a></li>
-                <li><a href="#">Product Style 04</a></li>
-                <li><a href="#">Product Style 05</a></li>
-                <li><a href="#">Product Style 06</a></li>
-                <li><a href="#">Product Style 07</a></li>
-              </ul>
-              <div class="nav-dropdown-menu-2-img">
-                <img src="Dropdown-Menu-image/14.jpg" />
-                <a href="#" class="dropdown-menu-men-btn">Men</a>
-              </div>
-              <div class="nav-dropdown-menu-2-img">
-                <img src="Dropdown-Menu-image/13.webp" />
-                <a href="#" class="dropdown-menu-women-btn">Women</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="nav-dropdown">
-            <div class="nav-dropdown-btn">
-              Products <i class="ri-arrow-down-s-line"></i>
-            </div>
-            <div class="nav-dropdown-menu">
-              <ul class="nav-dropdown-menu-links">
-                <h5>PRODUCT LAYOUTS</h5>
-                <li><a href="#"> Product grid 1</a></li>
-                <li><a href="#"> Product grid 2</a></li>
-                <li><a href="#">Product stacked</a></li>
-                <li><a href="#">Product right thumbnails</a></li>
-                <li><a href="#">Product bottom thumbnails</a></li>
-                <li><a href="#">Product drawer sidebar</a></li>
-                <li><a href="#">Product description accordion</a></li>
-                <li><a href="#">Product description list</a></li>
-                <li><a href="#">Product description vertical</a></li>
-              </ul>
-              <ul class="nav-dropdown-menu-links">
-                <h5>PRODUCT DETAILS</h5>
-
-                <li><a href="#">Product inner zoom</a></li>
-
-                <li><a href="#">Product zoom magnifier</a></li>
-
-                <li><a href="#">Product no zoom</a></li>
-
-                <li><a href="#">Product photoswipe popup</a></li>
-
-                <li>
-                  <a href="#">Product external zoom and photoswipe popup</a>
-                </li>
-
-                <li><a href="#">Product video</a></li>
-
-                <li><a href="#">Product 3D, AR models</a></li>
-                <li><a href="#"> Product options & customizer</a></li>
-                <li><a href="#">Advanced product types</a></li>
-
-                <li>
-                  <a href="#">Recipient information form for gift card </a>
-                </li>
-
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-              </ul>
-              <ul class="nav-dropdown-menu-links">
-                <h5>PRODUCT SWATCHS</h5>
-                <li><a href="#">Product color swatch</a></li>
-                <li><a href="#">Product rectangle</a></li>
-                <li><a href="#">Product rectangle color</a></li>
-                <li><a href="#">Product swatch image</a></li>
-                <li><a href="#">Product swatch image rounded</a></li>
-                <li><a href="#">Product swatch dropdown</a></li>
-                <li><a href="#">Product swatch dropdown color</a></li>
-              </ul>
-              <ul class="nav-dropdown-menu-links">
-                <h5>PRODUCT FEATURES</h5>
-                <li><a href="#">Frequently bought together</a></li>
-                <li><a href="#">Frequently bought together 2</a></li>
-                <li><a href="#">Frequently Bought Together</a></li>
-                <li><a href="#">by EcomRise</a></li>
-                <li><a href="#">Product upsell features</a></li>
-                <li><a href="#">Product pre-orders</a></li>
-                <li><a href="#">Back in stock notification</a></li>
-                <li><a href="#">Product pickup</a></li>
-                <li><a href="#">Variant images grouped</a></li>
-                <li><a href="#">Complimentary products</a></li>
-                <li><a href="#">Integration Ryviu app</a></li>
-                <li><a href="#">Quick order list</a></li>
-                <li><a href="#">New</a></li>
-                <li><a href="#">Sale Notification</a></li>
-                <li><a href="#">by EcomRise</a></li>
-                <li><a href="#">Volume Discount</a></li>
-              </ul>
-
-              <div class="swiper-container dropdown-menu-swipper-container">
-                <div class="swiper-wrapper dropdown-menu-swipper-wrapper">
-                  <div class="swiper-slide dropdown-menu-swipper-slide">
-                    <div class="dropdown-menu-card">
-                      <div class="dropdown-menu-card-content">
-                        <img
-                          src="Dropdown-Menu-image/Drodpown-Swipper-img-2.jpg"
-                          class="dropdown-menu-card-img"
-                        />
-                        <div class="dropdown-menu-card-overlay">
-                          <div class="dropdown-menu-card-icons">
-                            <i
-                              class="ri-mail-add-fill dropdown-menu-card-icon"
-                              title="Quick Add"
-                            ></i>
-                            <i
-                              class="ri-compass-discover-fill dropdown-menu-card-icon"
-                              title="Add To WishList"
-                            ></i>
-                            <i
-                              class="ri-heart-3-fill dropdown-menu-card-icon"
-                              title="Add To Compare"
-                            ></i>
-                            <i
-                              class="ri-eye-fill dropdown-menu-card-icon"
-                              title="Quick View"
-                            ></i>
-                          </div>
-                          <div class="dropdown-menu-card-size-product">
-                            S &nbsp; M &nbsp; L &nbsp; &nbsp; X &nbsp; L
-                          </div>
-                        </div>
-                      </div>
-
-                      <span class="dropdown-menu-card-product-title"
-                        >Oversized Printed T-shirt</span
-                      >
-                      <span class="dropdown-menu-card-product-prize"
-                        >$18.00</span
-                      >
-
-                      <div class="dropdown-menu-card-product-colors">
-                        <span
-                          class="dropdown-menu-card-product-color-white"
-                        ></span>
-                        <span
-                          class="dropdown-menu-card-product-color-pink"
-                        ></span>
-                        <span
-                          class="dropdown-menu-card-product-color-black"
-                        ></span>
-                      </div>
-                    </div>
-
-                    <div class="dropdown-menu-card">
-                      <div class="dropdown-menu-card-content">
-                        <img
-                          src="Dropdown-Menu-image/Drodpown-Swipper-img-2.jpg"
-                          class="dropdown-menu-card-img"
-                        />
-                        <div class="dropdown-menu-card-overlay">
-                          <div class="dropdown-menu-card-icons">
-                            <i
-                              class="ri-mail-add-fill dropdown-menu-card-icon"
-                              title="Quick Add"
-                            ></i>
-                            <i
-                              class="ri-compass-discover-fill dropdown-menu-card-icon"
-                              title="Add To WishList"
-                            ></i>
-                            <i
-                              class="ri-heart-3-fill dropdown-menu-card-icon"
-                              title="Add To Compare"
-                            ></i>
-                            <i
-                              class="ri-eye-fill dropdown-menu-card-icon"
-                              title="Quick View"
-                            ></i>
-                          </div>
-                          <div class="dropdown-menu-card-size-product">
-                            S &nbsp; M &nbsp; L &nbsp; &nbsp; X &nbsp; L
-                          </div>
-                        </div>
-                      </div>
-
-                      <span class="dropdown-menu-card-product-title"
-                        >Oversized Printed T-shirt</span
-                      >
-                      <span class="dropdown-menu-card-product-prize"
-                        >$18.00</span
-                      >
-
-                      <div class="dropdown-menu-card-product-colors">
-                        <span
-                          class="dropdown-menu-card-product-color-white"
-                        ></span>
-                        <span
-                          class="dropdown-menu-card-product-color-pink"
-                        ></span>
-                        <span
-                          class="dropdown-menu-card-product-color-black"
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide dropdown-menu-swipper-slide">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quisquam incidunt error totam culpa saepe magni ab porro,
-                    laboriosam laudantium architecto dignissimos tempora dolorem
-                    reprehenderit molestias minus voluptas adipisci possimus
-                    delectus!
-                  </div>
-                </div>
-                <div
-                  class="ri-arrow-right-s-line dropdown-menu-swipper-next"
-                ></div>
-                <div
-                  class="ri-arrow-left-s-line dropdown-menu-swipper-prev"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div style="height: 200vh; background: transparent"></div>
     </main>

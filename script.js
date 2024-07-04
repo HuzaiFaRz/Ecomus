@@ -1,106 +1,126 @@
 (() => {
-  const header = document.querySelector(".header");
-  const headerCloseBtn = document.querySelector(".top-header-close-btn");
-
+  const topBar = document.querySelector(".top-bar");
+  const topBarCloseBtn = document.querySelector(".top-bar-close-btn");
   const countrySelectBtn = document.querySelectorAll(".country-select-btn");
   const countrySelectMenu = document.querySelectorAll(".country-select-menu");
-  const countrySelectMenuBtnIcon = document.querySelectorAll(
-    ".country-select-btn-icon"
-  );
 
-  const navDropdown = document.querySelectorAll(".nav-dropdown");
-  const navDropdownMenu = document.querySelectorAll(".nav-dropdown-menu");
-  const navDropdownMenuPart1 = document.querySelector(
-    ".nav-dropdown-menu-part-1"
-  );
-
-  const headerFunctionality = () => {
-    Array.from(countrySelectBtn).forEach(
-      (countrySelectBtnElem, countrySelectBtnIndex) => {
-        countrySelectBtnElem.addEventListener("click", () => {
-          // let open = true;
-          countrySelectMenu[countrySelectBtnIndex].classList.toggle(
-            "country-Select-Menu-Active"
-          );
-
-          if (
-            countrySelectMenu[countrySelectBtnIndex].classList.contains(
+  const topBarFunctionality = () => {
+    if (countrySelectBtn) {
+      Array.from(countrySelectBtn).forEach(
+        (countrySelectBtnElem, countrySelectBtnIndex) => {
+          countrySelectBtnElem.addEventListener("click", () => {
+            countrySelectMenu[countrySelectBtnIndex].classList.toggle(
               "country-Select-Menu-Active"
-            )
-          ) {
-            gsap.to(countrySelectMenu[countrySelectBtnIndex], {
-              opacity: 1,
-              ease: Power1.easeInOut,
-              duration: 0.3,
-            });
+            );
 
-            if ((countrySelectMenu[countrySelectBtnIndex].opa)) {
-              console.log("ds");
+            if (
+              countrySelectMenu[countrySelectBtnIndex].classList.contains(
+                "country-Select-Menu-Active"
+              )
+            ) {
+              gsap.to(countrySelectMenu[countrySelectBtnIndex], {
+                opacity: 1,
+                visibility: "visible",
+                ease: Power1.easeInOut,
+                duration: 0.3,
+              });
+
+              if (countrySelectMenu[countrySelectBtnIndex].opa) {
+                console.log("ds");
+              }
+            } else {
+              gsap.to(countrySelectMenu[countrySelectBtnIndex], {
+                opacity: 0,
+                visibility: "hidden",
+                ease: Power1.easeInOut,
+                duration: 0.3,
+              });
             }
-          } else {
-            gsap.to(countrySelectMenu[countrySelectBtnIndex], {
-              opacity: 0,
-              ease: Power1.easeInOut,
-              duration: 0.3,
-            });
-          }
 
-          // if (
-          //   countrySelectMenu[1].classList.contains(
-          //     "country-Select-Menu-Active"
-          //   )
-          // ) {
-          //   console.log("this");
-          //   gsap.to(countrySelectMenu[1], {
-          //     visibility: "visible",
-          //     opacity: 1,
-          //     ease: Power1.easeInOut,
-          //     duration: 0.3,
-          //   });
-          // }
-        });
-      }
-    );
-  };
-  headerFunctionality();
+            // if (
+            //   countrySelectMenu[1].classList.contains(
+            //     "country-Select-Menu-Active"
+            //   )
+            // ) {
+            //   console.log("this");
+            //   gsap.to(countrySelectMenu[1], {
+            //     visibility: "visible",
+            //     opacity: 1,
+            //     ease: Power1.easeInOut,
+            //     duration: 0.3,
+            //   });
+            // }
+          });
+        }
+      );
+    }
 
-  const headerTopSwipperSlider = () => {
-    var mySwiper = new Swiper(".top-header-swipper-container", {
-      direction: "horizontal",
-      loop: true,
-      effect: "slide",
-
-      autoplay: {
-        delay: 3000,
-      },
-
-      navigation: {
-        nextEl: ".top-header-swipper-next",
-        prevEl: ".top-header-swipper-prev",
-      },
-    });
-  };
-
-  headerTopSwipperSlider();
-
-  const headerAnimation = () => {
-    if (headerCloseBtn) {
-      headerCloseBtn.addEventListener("click", () => {
-        gsap.to(header, {
+    if (topBarCloseBtn) {
+      topBarCloseBtn.addEventListener("click", () => {
+        gsap.to(topBar, {
           duration: 0.5,
           ease: Power3.easeInOut,
           y: "-100%",
         });
         setTimeout(() => {
-          gsap.to(header, {
+          gsap.to(topBar, {
             display: "none",
           });
         }, 200);
       });
     }
   };
-  headerAnimation();
+  topBarFunctionality();
+  const centerSearchForm = document.querySelector(".center-search-form");
+  const centerSearchMenu = document.querySelector(".center-search-menu");
+  const centerSearchInput = document.querySelector(".center-search-input");
+  const centerSearchInputCancel = document.querySelector(
+    ".center-search-input-cancel"
+  );
 
+  const centerBarFunctionality = () => {
+    if (centerSearchInput) {
+      centerSearchInput.addEventListener("input", () => {
+        if (!centerSearchInput.value) {
+          gsap.to(centerSearchInputCancel, {
+            visibility: "hidden",
+          });
+        } else {
+          gsap.to(centerSearchInputCancel, {
+            visibility: "visible",
+          });
+          centerSearchInputCancel.addEventListener("click", () => {
+            centerSearchInput.value = "";
+          });
+        }
+      });
+    }
+    if (centerSearchForm) {
+      centerSearchForm.addEventListener("mouseenter", () => {
+        gsap.to(centerSearchMenu, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.3,
+          ease: Power2.easeInOut,
+        });
+      });
+      centerSearchForm.addEventListener("mouseleave", () => {
+        gsap.to(centerSearchMenu, {
+          visibility: "hidden",
+          opacity: 0,
+          duration: 0.3,
+          ease: Power2.easeInOut,
+        });
+      });
+    }
+  };
+  centerBarFunctionality();
+
+  const navDropdown = document.querySelectorAll(".nav-dropdown");
+  const navDropdownMenu = document.querySelectorAll(".nav-dropdown-menu");
+  const navDropdownMenuPart1 = document.querySelector(
+    ".nav-dropdown-menu-part-1"
+  );
   const navDropdownS = () => {
     navDropdown.forEach((elem, index) => {
       elem.addEventListener("mouseenter", () => {
