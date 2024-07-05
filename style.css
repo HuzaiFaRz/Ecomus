@@ -7,7 +7,6 @@
   -webkit-user-select: none;
   -webkit-user-modify: none !important;
   -webkit-user-drag: none;
-  font-family: AlbertSansRegular !important;
 }
 
 @font-face {
@@ -49,25 +48,27 @@ input[type="search"]::-webkit-search-cancel-button {
   background: #000000;
 }
 
-
-
-
+.country-select-menu {
+  z-index: 99999999999999 !important; /* Make sure this is high enough to appear above other elements */
+}
 
 /* .center-search-input-cancel{
   width: 30px;
   height: 30px;
 } */
 
-
-
-
-
-
 main {
   overflow: hidden !important;
   background: #253d4e;
   background: #61b482;
   background: #61b482;
+  background-color: #ebebeb;
+}
+
+
+.login-form{
+  width: 650px;
+  height: max-content;
 }
 
 s:checked .header {

@@ -1,55 +1,28 @@
 (() => {
   const topBar = document.querySelector(".top-bar");
   const topBarCloseBtn = document.querySelector(".top-bar-close-btn");
-  const countrySelectBtn = document.querySelectorAll(".country-select-btn");
+  const countrySelect = document.querySelectorAll(".country-select");
   const countrySelectMenu = document.querySelectorAll(".country-select-menu");
 
   const topBarFunctionality = () => {
-    if (countrySelectBtn) {
-      Array.from(countrySelectBtn).forEach(
-        (countrySelectBtnElem, countrySelectBtnIndex) => {
-          countrySelectBtnElem.addEventListener("click", () => {
-            countrySelectMenu[countrySelectBtnIndex].classList.toggle(
-              "country-Select-Menu-Active"
-            );
-
-            if (
-              countrySelectMenu[countrySelectBtnIndex].classList.contains(
-                "country-Select-Menu-Active"
-              )
-            ) {
-              gsap.to(countrySelectMenu[countrySelectBtnIndex], {
-                opacity: 1,
-                visibility: "visible",
-                ease: Power1.easeInOut,
-                duration: 0.3,
-              });
-
-              if (countrySelectMenu[countrySelectBtnIndex].opa) {
-                console.log("ds");
-              }
-            } else {
-              gsap.to(countrySelectMenu[countrySelectBtnIndex], {
-                opacity: 0,
-                visibility: "hidden",
-                ease: Power1.easeInOut,
-                duration: 0.3,
-              });
-            }
-
-            // if (
-            //   countrySelectMenu[1].classList.contains(
-            //     "country-Select-Menu-Active"
-            //   )
-            // ) {
-            //   console.log("this");
-            //   gsap.to(countrySelectMenu[1], {
-            //     visibility: "visible",
-            //     opacity: 1,
-            //     ease: Power1.easeInOut,
-            //     duration: 0.3,
-            //   });
-            // }
+    if (countrySelect) {
+      Array.from(countrySelect).forEach(
+        (countrySelectElem, countrySelectIndex) => {
+          countrySelectElem.addEventListener("mouseenter", () => {
+            gsap.to(countrySelectMenu[countrySelectIndex], {
+              opacity: 1,
+              visibility: "visible",
+              duration: 0.3,
+              ease: Power2.easeInOut,
+            });
+          });
+          countrySelectElem.addEventListener("mouseleave", () => {
+            gsap.to(countrySelectMenu[countrySelectIndex], {
+              opacity: 0,
+              visibility: "hidden",
+              duration: 0.3,
+              ease: Power2.easeInOut,
+            });
           });
         }
       );
@@ -104,6 +77,22 @@
           ease: Power2.easeInOut,
         });
       });
+      centerSearchInput.addEventListener("input", () => {
+        gsap.to(centerSearchMenu, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.3,
+          ease: Power2.easeInOut,
+        });
+        if (centerSearchInput.value === "") {
+          gsap.to(centerSearchMenu, {
+            visibility: "hidden",
+            opacity: 0,
+            duration: 0.3,
+            ease: Power2.easeInOut,
+          });
+        }
+      });
       centerSearchForm.addEventListener("mouseleave", () => {
         gsap.to(centerSearchMenu, {
           visibility: "hidden",
@@ -121,6 +110,7 @@
   const navDropdownMenuPart1 = document.querySelector(
     ".nav-dropdown-menu-part-1"
   );
+
   const navDropdownS = () => {
     navDropdown.forEach((elem, index) => {
       elem.addEventListener("mouseenter", () => {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecomus</title>
     <link rel="shortcut icon" href="Favicon/Favicon.webp" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="w-full h-full overflow-x-hidden font-['AlbertSansRegular']">
-    <main class="overflow-hidden">
+    <main class="overflow-hidden relative">
       <header
         class="header flex flex-col justify-center items-center w-full h-55 bg-black"
       >
@@ -73,7 +74,9 @@
                   >+18001090</a
                 >
               </span>
-              <div class="country-select relative inline-block">
+              <div
+                class="country-select relative inline-flex justify-center items-center"
+              >
                 <div
                   class="country-select-btn flex flex-row justify-center items-center gap-1 text-sm font-medium cursor-pointer"
                 >
@@ -111,7 +114,9 @@
                   >
                 </div>
               </div>
-              <div class="country-select relative inline-block">
+              <div
+                class="country-select relative inline-flex justify-center items-center"
+              >
                 <div
                   class="country-select-btn flex flex-row justify-center items-center gap-1 text-sm font-medium cursor-pointer"
                 >
@@ -258,27 +263,67 @@
               </form>
             </div>
 
-            <div
-              class="center-bar-right-content flex flex-row justify-center items-center gap-5"
+            <ul
+              class="center-bar-right-content flex flex-row justify-center items-center gap-5 list-none"
             >
-              <span
-                class="login-btn flex flex-row justify-center items-center tracking-wider text-[#253d4e] hover:text-[#83b735]"
-                ><i class="ri-user-fill text-2xl"></i>Login</span
+              <li
+                class="ri-shopping-cart-fill cart-btn text-4xl border-l border-grey-100 px-4 relative"
               >
-              <span
-                class="login-btn flex flex-row justify-center items-center tracking-wider text-[#253d4e] hover:text-[#83b735]"
-                ><i class="ri-collapse-horizontal-line text-2xl"></i
-                >Compare</span
+                <span
+                  class="cart-btn-count bg-[#61b482] text-[#fff] rounded-full w-5 h-5 text-xs flex flex-col items-center justify-center absolute top-0 right-0"
+                  >0</span
+                >
+              </li>
+              <li
+                class="login-btn flex flex-row justify-center items-center gap-2 font-light text-[#253d4e] hover:text-[#83b735]"
               >
+                <i class="ri-user-fill text-2xl"></i>Login
+              </li>
+              <div
+                class="login-page w-full h-screen bg-[#00000080] absolute z-50 top-0 left-0 flex flex-col justify-center items-center"
+              >
+                <form class="bg-[#fff] login-form">
+                  <div
+                    class="login-header flex flex-row items-center justify-between px-4 py-3 w-full"
+                  >
+                    <h2 class="text-3xl font-light">Log In</h2>
+                    <span
+                      class="ri-close-line login-box-close-btn text-4xl font-light"
+                    ></span>
+                  </div>
+                  <div
+                    class="login-body w-full flex flex-col justify-center items-center gap-5"
+                  >
+                    <label
+                      for="login-email relative w-full border-[#ebebeb] border-2 rounded-2xl"
+                    >
+                      <span class="absolute text-sm tracking-wider">
+                        Email *
+                      </span>
 
-              <span
-                class="login-btn flex flex-row justify-center items-center tracking-wider text-[#253d4e] hover:text-[#83b735]"
-                ><i class="ri-heart-fill text-2xl"></i>Wishlist</span
+                      <input
+                        type="email"
+                        class="w-full focus:outline-0 px-1 py-1 bg-[#fff] text-[#909090]"
+                        id="login-email"
+                        autocapitalize="off"
+                        autocomplete="off"
+                      />
+                    </label>
+                  </div>
+                </form>
+              </div>
+
+              <li
+                class="login-btn flex flex-row justify-center items-center gap-2 font-light text-[#253d4e] hover:text-[#83b735]"
               >
-              <span
-                class="ri-shopping-cart-fill cart-btn text-4xl border-l border-grey-100 px-2"
-              ></span>
-            </div>
+                <i class="ri-arrow-go-forward-fill text-2xl"></i>Compare
+              </li>
+              <li
+                class="login-btn flex flex-row justify-center items-center gap-2 font-light text-[#253d4e] hover:text-[#83b735]"
+              >
+                <i class="ri-heart-fill text-2xl"></i>Wishlist
+              </li>
+            </ul>
           </div>
 
           <div
@@ -547,7 +592,7 @@
 
       <div style="height: 200vh; background: transparent"></div>
     </main>
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
