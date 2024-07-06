@@ -70,17 +70,16 @@ main {
   height: max-content;
 }
 
-.login-email-label,.login-password-label {
+.login-email-label,
+.login-password-label {
   position: absolute;
   top: 25%;
   left: 2%;
 }
 
-
 .login-page {
   z-index: 99999999999999999;
 }
-
 
 /* .login-email-label:focus{
  background: red;
