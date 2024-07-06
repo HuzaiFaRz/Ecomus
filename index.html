@@ -294,22 +294,40 @@
                   <div
                     class="login-body w-full flex flex-col justify-center items-center gap-5 px-4 py-4"
                   >
-                    <label
-                      for="login-email "
-                      class="relative w-full border-[#ebebeb] border-2 rounded-2xl px-2 py-2"
+                    <div
+                      class="relative overflow-hidden w-full border-[#ebebeb] border-2 rounded-3xl flex flex-row justify-center items-center"
                     >
-                      <span class="absolute text-sm tracking-wider">
-                        Email *
-                      </span>
-
                       <input
                         type="email"
-                        class="w-full h-full focus:outline-0 px-1 py-1 bg-[#fff] text-[#909090]"
+                        class="accountInput focus:outline-0 w-full bg-[#fff] text-[#909090] text-sm px-2 py-2"
                         id="login-email"
-                        autocapitalize="off"
-                        autocomplete="off"
+                        style="height: 50px"
                       />
-                    </label>
+                      <label
+                        for="login-email"
+                        class="login-email-label text-[#909090] w-max h-max"
+                        id="accountInputLabel"
+                      >
+                        Email*
+                      </label>
+                    </div>
+                    <div
+                      class="relative overflow-hidden w-full border-[#ebebeb] border-2 rounded-3xl flex flex-row justify-center items-center"
+                    >
+                      <input
+                        type="password"
+                        class="accountInput focus:outline-0 w-full bg-[#fff] text-[#909090] text-sm px-2 py-2"
+                        id="login-password"
+                        style="height: 50px"
+                      />
+                      <label
+                        for="login-password"
+                        class="login-password-label text-[#909090] w-max h-max"
+                        id="accountInputLabel"
+                      >
+                        Password*
+                      </label>
+                    </div>
                   </div>
                 </form>
               </div>

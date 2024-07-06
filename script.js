@@ -50,6 +50,9 @@
   const centerSearchInputCancel = document.querySelector(
     ".center-search-input-cancel"
   );
+  const loginForm = document.querySelector(".login-form");
+  const accountInput = document.querySelectorAll(".accountInput");
+  const accountInputLabel = document.querySelectorAll("#accountInputLabel");
 
   const centerBarFunctionality = () => {
     if (centerSearchInput) {
@@ -102,6 +105,19 @@
         });
       });
     }
+    const loginFunctionality = () => {
+      if (loginForm) {
+        Array.from(accountInput).forEach(
+          (accountInputElem, accountInputIndex) => {
+            console.log(accountInputElem, accountInputIndex);
+            accountInputElem.addEventListener("click", () => {
+              console.log(this);
+            });
+          }
+        );
+      }
+    };
+    loginFunctionality();
   };
   centerBarFunctionality();
 
