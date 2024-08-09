@@ -17,8 +17,11 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="w-full h-full overflow-x-hidden font-['AlbertSansRegular']">
-    <main class="overflow-hidden relative">
+  <body class="w-full h-full overflow-x-hidde font-['AlbertSansRegular']">
+    <main class="overflow-hidde relative">
+      <div
+        class="element-close-btn absolute z-50 top-0 left-0 bg-[#fff] text-black text-3xl cursor-pointer rounded-full w-14 h-14 flex justify-center items-center ri-close-line invisible opacity-0"
+      ></div>
       <header
         class="header flex flex-col justify-center items-center w-full h-55 bg-black"
       >
@@ -275,62 +278,69 @@
                 >
               </li>
               <li
-                class="login-btn flex flex-row justify-center items-center gap-2 font-light text-[#253d4e] hover:text-[#83b735]"
+                class="login-btn flex flex-row justify-center cursor-pointer items-center gap-2 font-light text-[#253d4e] hover:text-[#83b735]"
               >
                 <i class="ri-user-fill text-2xl"></i>Login
               </li>
+
               <div
-                class="login-page w-full h-screen bg-[#00000080] absolute z-50 top-0 left-0 flex flex-col justify-center items-center"
+                class="account-page-overlay w-full fixed top-0 left-0 h-screen min-h-lvh bg-[#00000050] backdrop-blur-sm backdrop-grayscale opacity-0 invisible"
+              ></div>
+
+              <form
+                class="bg-[#fff] login-form absolute top-40 left-2/4 -translate-x-2/4 opacity-0 invisible"
               >
-                <form class="bg-[#fff] login-form">
-                  <div
-                    class="login-header flex flex-row items-center justify-between px-4 py-3 w-full"
-                  >
-                    <h2 class="text-3xl font-light">Log In</h2>
-                    <span
-                      class="ri-close-line login-box-close-btn text-4xl font-light"
-                    ></span>
+                <div
+                  class="login-header flex flex-row items-center justify-between px-4 py-3 w-full"
+                >
+                  <h2 class="text-3xl font-light">Log In</h2>
+                  <span
+                    class="ri-close-line login-box-close-btn text-4xl font-light"
+                  ></span>
+                </div>
+                <div
+                  class="login-body w-full flex flex-col justify-center items-start gap-5 px-4 py-4"
+                >
+                  <div class="login-email-placeholder text-[#909090]">
+                    Email*
                   </div>
-                  <div
-                    class="login-body w-full flex flex-col justify-center items-center gap-5 px-4 py-4"
-                  >
-                    <div
-                      class="relative overflow-hidden w-full border-[#ebebeb] border-2 rounded-3xl flex flex-row justify-center items-center"
-                    >
-                      <input
-                        type="email"
-                        class="accountInput focus:outline-0 w-full bg-[#fff] text-[#909090] text-sm px-2 py-2"
-                        id="login-email"
-                        style="height: 50px"
-                      />
-                      <label
-                        for="login-email"
-                        class="login-email-label text-[#909090] w-max h-max"
-                        id="accountInputLabel"
-                      >
-                        Email*
-                      </label>
-                    </div>
-                    <div
-                      class="relative overflow-hidden w-full border-[#ebebeb] border-2 rounded-3xl flex flex-row justify-center items-center"
-                    >
-                      <input
-                        type="password"
-                        class="accountInput focus:outline-0 w-full bg-[#fff] text-[#909090] text-sm px-2 py-2"
-                        id="login-password"
-                        style="height: 50px"
-                      />
-                      <label
-                        for="login-password"
-                        class="login-password-label text-[#909090] w-max h-max"
-                        id="accountInputLabel"
-                      >
-                        Password*
-                      </label>
-                    </div>
+                  <input
+                    type="email"
+                    class="accountInput focus:outline-0 w-full bg-[#fff] text-[#909090] text-sm px-2 py-2 border-[#ebebeb] border-2 rounded-1xl"
+                    id="login-email"
+                    style="height: 50px"
+                  />
+                  <div class="login-email-placeholder text-[#909090]">
+                    Password*
                   </div>
-                </form>
-              </div>
+                  <input
+                    type="password"
+                    class="accountInput focus:outline-0 w-full bg-[#fff] text-[#909090] text-sm px-2 py-2 border-[#ebebeb] border-2 rounded-1xl"
+                    id="login-password"
+                    style="height: 50px"
+                  />
+                  <a
+                    href="#"
+                    class="text-[#545454] text-sm underline underline-offset-4"
+                    >Forget Your Password?</a
+                  >
+                  <div
+                    class="flex flex-col justify-center items-start gap-4 w-full"
+                  >
+                    <a
+                      href="#"
+                      class="bg-black text-[#fff] text-md font-medium rounded-xl w-full px-2 py-3 text-center"
+                      >Log In</a
+                    >
+                    <a
+                      href="#"
+                      class="text-black text-sm font-bold underline underline-offset-4"
+                      >New customer? Create your account
+                      <i class="ri-arrow-right-up-line"></i
+                    ></a>
+                  </div>
+                </div>
+              </form>
 
               <li
                 class="login-btn flex flex-row justify-center items-center gap-2 font-light text-[#253d4e] hover:text-[#83b735]"

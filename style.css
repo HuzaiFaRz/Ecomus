@@ -63,6 +63,7 @@ main {
   background: #61b482;
   background: #61b482;
   background-color: #ebebeb;
+  background: #545454;
 }
 
 .login-form {
@@ -70,15 +71,8 @@ main {
   height: max-content;
 }
 
-.login-email-label,
-.login-password-label {
-  position: absolute;
-  top: 25%;
-  left: 2%;
-}
-
-.login-page {
-  z-index: 99999999999999999;
+.accountInput {
+  height: 50px;
 }
 
 /* .login-email-label:focus{

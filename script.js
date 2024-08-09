@@ -53,8 +53,49 @@
   const loginForm = document.querySelector(".login-form");
   const accountInput = document.querySelectorAll(".accountInput");
   const accountInputLabel = document.querySelectorAll("#accountInputLabel");
+  const elementCloseBtn = document.querySelector(".element-close-btn");
+  const accountPageOverlay = document.querySelector(".account-page-overlay");
+  const loginBoxCloseBtn = document.querySelector(".login-box-close-btn");
+  const loginBtn = document.querySelector(".login-btn");
 
   const centerBarFunctionality = () => {
+    const accountPageInVisible = () => {
+      accountPageOverlay.classList.replace("opacity-1", "opacity-0");
+      accountPageOverlay.classList.replace("visible", "invisible");
+      loginForm.classList.replace("opacity-1", "opacity-0");
+      loginForm.classList.replace("visible", "invisible");
+      gsap.to(elementCloseBtn, {
+        opacity: 0,
+        visibility: "hidden",
+      });
+    };
+    const accountPageVisible = () => {
+      accountPageOverlay.classList.replace("opacity-0", "opacity-1");
+      accountPageOverlay.classList.replace("invisible", "visible");
+      loginForm.classList.replace("opacity-0", "opacity-1");
+      loginForm.classList.replace("invisible", "visible");
+      accountPageOverlay.addEventListener("mousemove", (e) => {
+        gsap.to(elementCloseBtn, {
+          visibility: "visible",
+          opacity: 1,
+          x: e.x,
+          y: e.y,
+        });
+      });
+      document.body.addEventListener("mouseleave", (e) => {
+        gsap.to(elementCloseBtn, {
+          visibility: "hidden",
+          opacity: 0,
+        });
+      });
+      loginForm.addEventListener("mousemove", () => {
+        gsap.to(elementCloseBtn, {
+          visibility: "hidden",
+          opacity: 0,
+        });
+      });
+    };
+
     if (centerSearchInput) {
       centerSearchInput.addEventListener("input", () => {
         if (!centerSearchInput.value) {
@@ -105,19 +146,18 @@
         });
       });
     }
-    const loginFunctionality = () => {
-      if (loginForm) {
-        Array.from(accountInput).forEach(
-          (accountInputElem, accountInputIndex) => {
-            console.log(accountInputElem, accountInputIndex);
-            accountInputElem.addEventListener("click", () => {
-              console.log(this);
-            });
-          }
-        );
-      }
-    };
-    loginFunctionality();
+
+    if (!accountPageOverlay.classList.contains("opacity-1")) {
+      elementCloseBtn.addEventListener("click", () => {
+        accountPageInVisible();
+      });
+      loginBoxCloseBtn.addEventListener("click", () => {
+        accountPageInVisible();
+      });
+      loginBtn.addEventListener("click", () => {
+        accountPageVisible();
+      });
+    }
   };
   centerBarFunctionality();
 
@@ -139,7 +179,6 @@
       elem.addEventListener("mouseleave", () => {
         gsap.to(navDropdownMenu[index], {
           scaleY: 0,
-
           duration: 0.3,
         });
       });
